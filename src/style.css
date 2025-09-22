@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --background-default: #f2f2f2;
+  --box-bg-default: #ffffff;
+  --text-default: #000000;
+  --meta-text-color: #b4b4b4;
+
+  font-family: system-ui "Neue Haas Grotesk Display", sans-serif;
+  font-weight: 500;
+  background-color: var(--background-default);
+  color: var(--text-default);
+}
+
+.dark {
+  --background-default: #0c0c0c;
+  --box-bg-default: #000000;
+  --text-default: #f2f2f2;
+}
+
+@layer components {
+  .box {
+    @apply bg-[var(--box-bg-default)] rounded-2xl p-3 md:p-6 lg:p-8;
+  }
+
+  .link {
+    @apply underline md:text-lg text-base text-[var(--text-default)];
+  }
+
+  .meta {
+    @apply font-thin text-xs text-[var(--meta-text-color)];
+  }
+
+  .taxonomy {
+    @apply text-xs md:text-sm lg:text-base uppercase text-[var(--text-default)];
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Books API",
+    "category": "API / Backend",
+    "date": "Mars 2025",
+    "technologies": "Node.js, TypeScript, Express.js, MySQL"
+  },
+  "texts": {
+    "text-bloc-1": {
+      "title": "Le projet",
+      "content": "Books API est mon tout premier projet d'API REST développée avec [Node.js, TypeScript, Express.js, MySQL] entièrement en autodidacte pour me former aux technologies backend modernes."
+    },
+    "text-bloc-2": {
+      "title": "Fonctionnalités",
+      "content": "Books API offre la possibilité de gérer une bibliothèque personnelle offrant toutes les fonctionnalités CRUD nécessaires pour manipuler une collection de livres."
+    },
+    "text-bloc-3": {
+      "title": "Expérience",
+      "content": "Books API est devenu la base conceptuelle de mes projets suivants, servant d'inspiration pour le design system de Bookshelf puis pour le développement de Lightshelf, créant ainsi un écosystème cohérent autour de cette idée initiale."
+    },
+    "text-bloc-4": {
+      "title": "Plus d’informations",
+      "content": "Pour en savoir plus sur les détails d’implémentation, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le Repository Github."
+    }
+  },
+  "images": {
+    "cover": "./img/books-api/couverture_booksAPI.png",
+    "image-1": "../assets/img/books-api/image_1.png",
+    "image-2": "../assets/img/books-api/image_2.png",
+    "image-3": "../assets/img/books-api/image_3.png",
+    "image-4": "../assets/img/books-api/image_4.png"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Lightshelf",
+    "category": "Développement fullstack",
+    "date": "Juin 2025",
+    "technologies": "Vue.js, Laravel, SQLite"
+  },
+  "texts": {
+    "text-bloc-1": {
+      "title": "Le projet",
+      "content": "J'ai développé en autonomie une application web complète de gestion de collection de livres avec [Vue.js, Laravel, et SQLite] incluant API REST, self-made authentification, scraper de couvertures, seeders de base de donnée et interface utilisateur, pour maîtriser concrètement les interactions frontend/backend."
+    },
+    "text-bloc-2": {
+      "title": "Fonctionnalités",
+      "content": "Lightshelf permet de gérer sa collection de livres en ajoutant/supprimant des ouvrages, suivre leur état de lecture (à lire, en cours, terminé), associer des informations détaillées (titre, auteur, ISBN, résumé personnel), intégrer des couvertures via URL et personnaliser son profil, dans une interface sobre et responsive avec thème sombre/clair."
+    },
+    "text-bloc-3": {
+      "title": "Plus d’informations",
+      "content": "Pour en savoir plus sur les détails d’implémentation, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le Repository Github[https://github.com/k-sel/lightshelf]."
+    }
+  },
+  "images": {
+    "cover": "./img/lightshelf/couverture_lightshelf.png",
+    "image-1": "../assets/img/lightshelf/image_1.png",
+    "image-2": "../assets/img/lightshelf/image_2.png",
+    "image-3": "../assets/img/lightshelf/image_3.png",
+    "image-4": "../assets/img/lightshelf/image_4.png",
+    "image-5": "../assets/img/lightshelf/image_5.png"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Bookshelf",
+    "category": "UI/UX & Design system",
+    "date": "Avril 2025",
+    "technologies": "Figma"
+  },
+  "links": {
+    "title": "Liens & Ressources",
+    "link-1": {
+      "title": "Accéder au fichier Figma",
+      "url": "https://google.com"
+    },
+    "link-2": {
+      "title": "Découvir le Pitch Deck",
+      "url": "https://youtube.com"
+    }
+  },
+  "texts": {
+    "text-bloc-1": {
+      "title": "Le projet",
+      "content": "Bookshelf Design System représente ma première exploration approfondie de Figma dans le cadre d'un projet personnel proposé à la place du brief imposé par le cours.Par la suite, j’ai conçu un Pitch Deck  et défendu mon travail devant un auditoire."
+    },
+    "text-bloc-2": {
+      "title": "Apprentissages",
+      "content": "Ce projet m'a permis de maîtriser les aspects techniques de Figma incluant la gestion des variables l’utilisations de tokens pour les couleurs et dimensions, la création de composants réutilisables avec leurs variantes, l'implémentation des modes sombre/clair via le système de tokens, et la réalisation de prototypes interactifs cliquables."
+    },
+    "text-bloc-3": {
+      "title": "Apprentissages",
+      "content": "J’ai également développé mes compétences UX/UI, en définissant l'identité visuelle du projet, structuré l'architecture de l'information de l'application, conçu des user flows complets pour optimiser l'expérience utilisateur, et créé un design system cohérent permettant d'obtenir une interface minimaliste et fonctionnelle."
+    }
+  },
+  "images": {
+    "cover": "./img/bookshelf/couverture_bookshelf.png",
+    "image-1": "../assets/img/bookshelf/image_1.png",
+    "image-2": "../assets/img/bookshelf/image_2.png",
+    "image-3": "../assets/img/bookshelf/image_3.png",
+    "image-4": "../assets/img/bookshelf/image_4.png"
+  }
+}
