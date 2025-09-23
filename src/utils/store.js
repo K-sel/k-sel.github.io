@@ -1,9 +1,9 @@
-import { projects } from "./parser.js";
+import { project } from "./parser.js";
 
 export const getProjectBySlug = (slug) => {
-  return projects.find((project) => project.slug === slug);
-}
+  return project.find((project) => project.slug === slug);
+};
 
 export const getAllProjectsSlug = () => {
-    return projects.map((project) => project.slug);
-}
+  return project.map((project) => project.slug);
+};

@@ -2,16 +2,19 @@
 import { inject } from "vue";
 import { getAllProjectsSlug } from "../utils/store.js";
 
-const projects = getAllProjectsSlug();
-console.log(projects);
-
 import Hero from "../components/TheHero.vue";
 import ProjectPreview from "../components/Base-ProjectPreview.vue";
 import TheFooter from "../components/TheFooter.vue";
 import About from "../components/Base-TextContainer.vue";
 
+const slugs = getAllProjectsSlug();
 const night = inject("night");
 const clock = inject("clock");
+
+slugs.forEach((slug) => {
+  console.log(slug);
+});
+
 </script>
 
 <template>
@@ -19,12 +22,12 @@ const clock = inject("clock");
     <Hero :clock="clock" :night="night" />
     <section class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
       <ProjectPreview
-        v-for="(slug, index) in projects"
+        v-for="(slug, index) in slugs"
         :key="index"
         :slug="slug"
       />
     </section>
-    <About :night="night" />
+    <About />
     <TheFooter></TheFooter>
   </main>
 </template>

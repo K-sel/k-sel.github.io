@@ -1,5 +1,6 @@
 {
   "meta": {
+    "isProject" : true,
     "title": "Books API",
     "category": "API / Backend",
     "date": "Mars 2025",

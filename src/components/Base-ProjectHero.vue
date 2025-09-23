@@ -1,17 +1,20 @@
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { onMounted, inject } from "vue";
 import { gsap } from "@/libs/gsap/esm/all.js";
 import { useRouter } from "vue-router";
+
 const router = useRouter();
 
-const props = defineProps({
-  night: Boolean,
+const night = inject("night");
+
+defineProps({
   meta: Object,
 });
 
 onMounted(() => {
   gsap.to(".back", { rotation: 360, duration: 1 });
 });
+
 </script>
 
 <template>
@@ -20,7 +23,7 @@ onMounted(() => {
       <img
         class="back"
         @click="router.back()"
-        :src="props.night ? '/svg/back-white.svg' : '/svg/back-black.svg'"
+        :src="night ? '/svg/back-white.svg' : '/svg/back-black.svg'"
         alt="Bouton de retour"
       />
     </div>
@@ -30,7 +33,7 @@ onMounted(() => {
         class="w-full break-words text-center leading-tight"
         style="font-size: clamp(6rem, 8vw, 10rem)"
       >
-        {{ props.meta.title }}
+        {{ meta.title }}
       </h1>
     </div>
 
@@ -41,9 +44,9 @@ onMounted(() => {
         <p class="taxonomy">Technologies</p>
       </div>
       <div>
-        <p class="taxonomy">{{ props.meta.date }}</p>
-        <p class="taxonomy">{{ props.meta.category }}</p>
-        <p class="taxonomy">{{ props.meta.technologies }}</p>
+        <p class="taxonomy">{{ meta.date }}</p>
+        <p class="taxonomy">{{ meta.category }}</p>
+        <p class="taxonomy">{{ meta.technologies }}</p>
       </div>
     </div>
   </section>

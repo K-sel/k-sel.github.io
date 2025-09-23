@@ -1,14 +1,10 @@
 <script setup>
-import { defineProps, computed } from "vue";
+import { computed, inject } from "vue";
 import { useRoute } from "vue-router";
-
-const props = defineProps({
-  night: Boolean,
-});
-
-const color = computed(() => (props.night ? "white" : "black"));
-
 import aboutData from "../contents/about.json";
+
+const night = inject("night");
+const color = computed(() => (night ? "white" : "black"));
 
 const route = useRoute().path;
 </script>

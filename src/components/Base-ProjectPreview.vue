@@ -1,17 +1,14 @@
 <script setup>
-import { computed, watch } from "vue";
+import { computed } from "vue";
 import { RouterLink } from "vue-router";
-import { getProjectBySlug } from "../utils/store";
+import {  getProjectBySlug } from "../utils/store.js";
 
-const props = defineProps({
-  slug: { type: String, required: true },
-});
-
-const project = computed(() => getProjectBySlug(props.slug));
-</script> 
+const { slug } = defineProps({ slug: String });
+const project = computed(() => getProjectBySlug(slug));
+</script>
 
 <template>
-  <RouterLink :to="`project/${project.slug}`">  
+  <RouterLink :to="`project/${project.slug}`">
     <div class="bg-[var(--box-bg-default)] rounded-2xl p-4">
       <div class="flex flex-row justify-between">
         <p class="meta">{{ project.meta.title }}</p>

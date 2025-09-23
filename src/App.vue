@@ -1,5 +1,5 @@
 <script setup>
-import { provide, ref, computed, watch } from "vue";
+import { provide, ref, computed } from "vue";
 import { RouterView } from "vue-router";
 
 const date = ref(Date.now());
@@ -18,17 +18,12 @@ const night = computed(() => {
   return hours <= 6 || hours >= 22;
 });
 
-watch(
-  night,
-  (isNight) => {
-    if (isNight) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  },
-  { immediate: true }
-);
+const theme = ref("light");
+const toggleTheme = () => {
+  document.documentElement.classList.toggle("dark");
+  localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+  theme.value = localStorage.theme;
+};
 
 setInterval(() => {
   date.value = Date.now();
@@ -36,6 +31,8 @@ setInterval(() => {
 
 provide("night", night);
 provide("clock", clock);
+provide("toggleTheme", toggleTheme);
+provide("theme", theme);
 
 console.log(`
 +------------------------------------------------------------------------------------------------+
