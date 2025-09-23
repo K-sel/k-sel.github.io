@@ -10,12 +10,16 @@
   font-weight: 500;
   background-color: var(--background-default);
   color: var(--text-default);
+
+
 }
 
 .dark {
   --background-default: #0c0c0c;
   --box-bg-default: #000000;
   --text-default: #f2f2f2;
+
+  
 }
 
 @layer components {
@@ -34,4 +38,7 @@
   .taxonomy {
     @apply text-xs md:text-sm lg:text-base uppercase text-[var(--text-default)];
   }
+
 }
+
+

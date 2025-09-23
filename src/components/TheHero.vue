@@ -18,7 +18,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="box h-[70dvh] flex flex-col justify-between px-6 py-4">
+  <div class="box h-[70dvh] flex flex-col justify-between">
     <div class="flex flex-col gap-12 md:flex-row md:justify-between">
       <h1 class="text-2xl md:text-3xl lg:text-4xl">
         Jonathan Pinard

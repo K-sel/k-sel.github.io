@@ -1,10 +1,26 @@
 <script setup>
 import { computed, inject } from "vue";
 import { useRoute } from "vue-router";
-import aboutData from "../contents/about.json";
+import aboutData from "@/contents/about.json";
 
-const night = inject("night");
-const color = computed(() => (night ? "white" : "black"));
+const props = defineProps({
+  text: {
+    type: String,
+    required: false,
+    default: aboutData.hero
+  },
+
+  title : {
+    type: String,
+    required: false,
+    default: "A propos de moi",
+  },
+});
+
+const theme = inject("theme");
+const color = computed(() => (theme.value == "dark" ? "white" : "black"));
+
+console.log(props.text);
 
 const route = useRoute().path;
 </script>
@@ -12,10 +28,10 @@ const route = useRoute().path;
 <template>
   <div class="box h-fit flex flex-col justify-between">
     <div class="flex">
-      <p class="uppercase text-xs">A propos de moi</p>
+      <p class="uppercase text-xs">{{ props.title }}</p>
     </div>
     <div class="flex py-12 md:p-12 lg:p-24">
-      <p class="text-2xl md:text-3xl lg:text-4xl">{{ aboutData.hero }}</p>
+      <p class="text-2xl md:text-3xl lg:text-4xl">{{ props.text }}</p>
     </div>
 
     <div class="flex justify-end">

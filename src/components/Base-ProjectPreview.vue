@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { RouterLink } from "vue-router";
-import {  getProjectBySlug } from "../utils/store.js";
+import {  getProjectBySlug } from "@/utils/store.js";
 
 const { slug } = defineProps({ slug: String });
 const project = computed(() => getProjectBySlug(slug));
@@ -17,7 +17,7 @@ const project = computed(() => getProjectBySlug(slug));
       <div class="flex py-6 w-full h-full">
         <img
           class="w-full h-[400px] object-contain rounded-2xl"
-          :src="project.images.cover"
+          :src="project.meta.cover"
           alt="screenshot de l'interface d'accueil de mon application lightshelf"
         />
       </div>

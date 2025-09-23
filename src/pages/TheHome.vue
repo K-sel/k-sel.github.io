@@ -1,11 +1,11 @@
 <script setup>
 import { inject } from "vue";
-import { getAllProjectsSlug } from "../utils/store.js";
+import { getAllProjectsSlug } from "@/utils/store.js";
 
-import Hero from "../components/TheHero.vue";
-import ProjectPreview from "../components/Base-ProjectPreview.vue";
-import TheFooter from "../components/TheFooter.vue";
-import About from "../components/Base-TextContainer.vue";
+import Hero from "@/components/TheHero.vue";
+import ProjectPreview from "@/components/Base-ProjectPreview.vue";
+import TheFooter from "@/components/TheFooter.vue";
+import About from "@/components/Base-TextContainer.vue";
 
 const slugs = getAllProjectsSlug();
 const night = inject("night");

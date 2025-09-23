@@ -1,8 +1,9 @@
 <script setup>
-import { provide, ref, computed } from "vue";
+import { provide, ref, computed, onMounted } from "vue";
 import { RouterView } from "vue-router";
 
 const date = ref(Date.now());
+const theme = ref("light");
 
 const clock = computed(() => {
   const now = new Date(date.value);
@@ -18,12 +19,45 @@ const night = computed(() => {
   return hours <= 6 || hours >= 22;
 });
 
-const theme = ref("light");
-const toggleTheme = () => {
-  document.documentElement.classList.toggle("dark");
-  localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
-  theme.value = localStorage.theme;
+const initTheme = () => {
+  const savedTheme = localStorage.getItem('theme');
+  
+  if (savedTheme) {
+    theme.value = savedTheme;
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  } else {
+    if (night.value) {
+      theme.value = "dark";
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      theme.value = "light";
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }
 };
+
+const toggleTheme = () => {
+  const newTheme = theme.value === 'dark' ? 'light' : 'dark';
+  
+  theme.value = newTheme;
+  localStorage.setItem('theme', newTheme);
+  
+  if (newTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+};
+
+onMounted(() => {
+  initTheme();
+});
 
 setInterval(() => {
   date.value = Date.now();
