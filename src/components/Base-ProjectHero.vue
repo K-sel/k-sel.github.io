@@ -3,9 +3,16 @@ import { onMounted, inject } from "vue";
 import { gsap } from "@/libs/gsap/esm/all.js";
 import { useRouter } from "vue-router";
 
+const theme = inject("theme");
 const router = useRouter();
 
-const theme = inject("theme");
+function handleBack() {
+  if (window.history.state?.back) {
+    router.back();
+  } else {
+    router.push("/");
+  }
+}
 
 defineProps({
   meta: Object,
@@ -14,7 +21,6 @@ defineProps({
 onMounted(() => {
   gsap.to(".back", { rotation: 360, duration: 1 });
 });
-
 </script>
 
 <template>
@@ -22,7 +28,7 @@ onMounted(() => {
     <div class="flex flex-row h-fit w-full">
       <img
         class="back"
-        @click="router.back() ? router.back() :  '/'"
+        @click="handleBack"
         :src="theme == 'dark' ? '/svg/back-white.svg' : '/svg/back-black.svg'"
         alt="Bouton de retour"
       />

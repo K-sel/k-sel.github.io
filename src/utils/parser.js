@@ -4,7 +4,4 @@ const files = import.meta.glob("../contents/projects/*.json", {
 });
 
 // Convertir en tableau de projets
-export const project = Object.values(files).map((file) => {
-  const slug = file.meta.title.split(" ").join("-").toLowerCase();
-  return { ...file, slug };
-});
+export const project = Object.values(files);

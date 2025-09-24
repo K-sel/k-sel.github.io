@@ -1,0 +1,36 @@
+{
+  "slug": "cs50",
+  "meta": {
+    "isProject": false,
+    "color": "#A51C30",
+    "title": "CS50 - Harvard University",
+    "category": "Formation / Certification",
+    "date": "Juillet 2025",
+    "technologies": "C, Python, Flask, HTML/CSS, JavaScript, SQL",
+    "cover_text": "This is CS50."
+  },
+  "texts": {
+    "bloc1": {
+      "title": "La formation",
+      "content": "CS50 est le cours d'introduction à l'informatique de <span class='colored'>Harvard University</span>, reconnu mondialement. Cette formation complète couvre les <span class='colored'>fondamentaux de la programmation et de l'informatique</span> à travers des projets pratiques et des concepts théoriques solides."
+    },
+    "bloc2": {
+      "title": "Contenu pédagogique",
+      "content": "Le programme aborde les <span class='colored'>algorithmes, structures de données, développement web, bases de données</span> et cybersécurité. Chaque semaine combine cours magistraux, exercices pratiques et projets concrets pour une approche d'apprentissage complète."
+    },
+    "bloc3": {
+      "title": "Projets réalisés",
+      "content": "Durant la formation, j'ai développé plusieurs projets incluant des <span class='colored'>algorithmes de tri et de recherche en C</span>, des applications web interactives en Python/Flask, et une base de données SQL pour analyser des données réelles."
+    },
+    "bloc4": {
+      "title": "Certification",
+      "content": "Cette formation rigoureuse m'a permis d'acquérir des <span class='colored'>bases solides en informatique</span> et de développer une approche méthodique de la résolution de problèmes. Le certificat est disponible sur <a href='' target='_blank' class='underline'>Harvard CS50</a>."
+    }
+  },
+  "images": {
+    "image1": "/img/cs50/image_1.png",
+    "image2": "/img/cs50/image_2.png",
+    "image3": "/img/cs50/image_3.png",
+    "image4": "/img/cs50/image_4.png"
+  }
+}

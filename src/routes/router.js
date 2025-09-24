@@ -5,8 +5,7 @@ import BooksAPI from "../pages/projects/BooksAPI.vue";
 import Lightshelf from "../pages/projects/Lightshelf.vue";
 import Bookshelf from "../pages/projects/Bookshelf.vue";
 import TheAbout from "../pages/TheAbout.vue";
-
-
+import CS50 from "../pages/projects/CS50.vue";
 
 const routes = [
   { path: "/", component: TheHome },
@@ -14,6 +13,7 @@ const routes = [
   { path: "/project/books-api", component: BooksAPI },
   { path: "/project/lightshelf", component: Lightshelf },
   { path: "/project/bookshelf", component: Bookshelf },
+  { path: "/project/cs50", component: CS50 },
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
 
@@ -22,5 +22,5 @@ export const router = createRouter({
   routes,
   scrollBehavior() {
     return { top: 0 };
-  }
+  },
 });
