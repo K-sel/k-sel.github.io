@@ -1,6 +1,9 @@
 <script setup>
-import { inject } from "vue";
+import { inject, onMounted, ref } from "vue";
 import { getAllProjectsSlug } from "@/utils/store.js";
+import { useRoute } from "vue-router";
+import { watch } from "vue";
+import gsap from "gsap";
 
 import Hero from "@/components/TheHero.vue";
 import ProjectPreview from "@/components/Base-ProjectPreview.vue";
@@ -11,13 +14,31 @@ const slugs = getAllProjectsSlug();
 const night = inject("night");
 const clock = inject("clock");
 
-slugs.forEach((slug) => {
-  console.log(slug);
+const mainRef = ref(null);
+
+const route = useRoute();
+
+function slideInFromTop() {
+  if (!mainRef.value) return;
+
+  gsap.set(mainRef.value, { y: "-100%" });
+
+  gsap.to(mainRef.value, {
+    y: "0%",
+    duration: 0.5,
+    ease: "power3.out"
+  });
+}
+
+onMounted(() => {
+  slideInFromTop();
 });
+
+watch(() => route.fullPath, () => slideInFromTop());
 </script>
 
 <template>
-  <main class="m-3 md:m-6 lg:m-24 max-w-dvw flex flex-col gap-2">
+  <main ref="mainRef" class="m-3 md:m-6 lg:m-24 max-w-dvw flex flex-col gap-2">
     <Hero :clock="clock" :night="night" />
     <section class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
       <ProjectPreview

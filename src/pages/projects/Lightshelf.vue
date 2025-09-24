@@ -10,12 +10,11 @@ import TheFooter from "@/components/TheFooter.vue";
 const route = useRoute().path;
 const night = inject("night");
 const project = computed(() => getProjectBySlug(route.split("/")[2]));
-
 const projectColor = project.value.meta.color;
 </script>
 
 <template>
-  <main class="m-3 md:m-6 lg:m-24 max-w-dvw flex flex-col gap-3">
+  <main ref="mainRef" class="m-3 md:m-6 lg:m-24 max-w-dvw flex flex-col gap-3">
     <ProjectHero :night="night" :meta="project.meta" />
     <TextContainer
       :text="project.texts.bloc1.content"

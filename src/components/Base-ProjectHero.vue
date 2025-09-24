@@ -1,6 +1,6 @@
 <script setup>
-import { onMounted, inject } from "vue";
-import { gsap } from "@/libs/gsap/esm/all.js";
+import { onMounted, inject, ref } from "vue";
+import gsap from "gsap";
 import { useRouter } from "vue-router";
 
 const theme = inject("theme");
@@ -14,17 +14,40 @@ function handleBack() {
   }
 }
 
+const heroRef = ref(null);
+
+onMounted(() => {
+  if (!heroRef.value) return;
+
+  // État initial visuel (permet un rendu propre si CSS/SSR change l'opacity)
+  gsap.set(heroRef.value, {
+    y: 80,
+    opacity: 0,
+    rotationX: 12, // démarrer incliné (donne profondeur)
+    transformOrigin: "center center",
+    willChange: "transform, opacity",
+  });
+
+  // Animation d'entrée : slide + rotation -> pose 3D naturelle
+  gsap.to(heroRef.value, {
+    y: 0,
+    opacity: 1,
+    rotationX: 0,
+    duration: 1,
+    ease: "power3.out",
+     transformPerspective: 800,
+  });
+   gsap.to(".back", { rotation: 360, duration: 1 });
+});
+
 defineProps({
   meta: Object,
 });
 
-onMounted(() => {
-  gsap.to(".back", { rotation: 360, duration: 1 });
-});
 </script>
 
 <template>
-  <section class="box flex flex-col h-[80dvh] w-full justify-between">
+  <section ref="heroRef" class="box flex flex-col h-[80dvh] w-full justify-between">
     <div class="flex flex-row h-fit w-full">
       <img
         class="back"

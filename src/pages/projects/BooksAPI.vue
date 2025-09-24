@@ -10,8 +10,8 @@ import TheFooter from "@/components/TheFooter.vue";
 const route = useRoute().path;
 const night = inject("night");
 const project = computed(() => getProjectBySlug(route.split("/")[2]));
-
 const projectColor = project.value.meta.color;
+
 </script>
 
 <template>
@@ -57,4 +57,5 @@ const projectColor = project.value.meta.color;
 </template>
 
 <style scoped>
+
 </style>
