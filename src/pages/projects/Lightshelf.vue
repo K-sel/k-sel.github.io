@@ -12,8 +12,6 @@ const night = inject("night");
 const project = computed(() => getProjectBySlug(route.split("/")[2]));
 
 const projectColor = project.value.meta.color;
-
-console.log(project);
 </script>
 
 <template>

@@ -23,9 +23,6 @@ const props = defineProps({
 });
 
 const theme = inject("theme");
-
-console.log(props.text);
-
 const route = useRoute().path;
 </script>
 
