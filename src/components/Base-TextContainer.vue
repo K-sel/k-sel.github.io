@@ -29,7 +29,7 @@ const route = useRoute().path;
 <template>
   <div class="box h-fit flex flex-col justify-between">
     <div class="flex">
-      <p class="uppercase text-xs">{{ props.title }}</p>
+      <p class="uppercase text-[10px] md:text-xs">{{ props.title }}</p>
     </div>
     <div class="flex py-12 md:p-12 lg:p-24">
       <p class="text-2xl md:text-3xl lg:text-4xl" :style="{ '--custom-color': props.color }" v-html="props.text"></p>

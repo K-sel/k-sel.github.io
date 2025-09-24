@@ -94,7 +94,7 @@ defineProps({
 
 <template>
   <div ref="linkRef">
-    <div ref="heroRef" class="box h-[70dvh] flex flex-col justify-between">
+    <div ref="heroRef" class="box h-[90dvh] md:h-[75dvh] flex flex-col justify-between">
       <div class="flex flex-col gap-12 md:flex-row md:justify-between">
         <div class="flex flex-row h-fit items-center justify-between">
           <h1 class="text-2xl md:text-3xl lg:text-4xl">

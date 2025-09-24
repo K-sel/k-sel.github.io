@@ -18,6 +18,6 @@ defineProps({
       />
     </svg>
 
-    <p>{{ text }}</p>
+    <p class="link">{{ text }}</p>
   </div>
 </template>
