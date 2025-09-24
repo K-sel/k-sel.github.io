@@ -2,6 +2,7 @@
   "meta": {
     "isProject": true,
     "title": "Bookshelf",
+    "color": "#48DE7A",
     "category": "UI/UX & Design system",
     "date": "Avril 2025",
     "technologies": "Figma",
@@ -21,15 +22,15 @@
   "texts": {
     "bloc1": {
       "title": "Le projet",
-      "content": "Bookshelf Design System représente ma première exploration approfondie de Figma dans le cadre d'un projet personnel proposé à la place du brief imposé par le cours.Par la suite, j’ai conçu un Pitch Deck  et défendu mon travail devant un auditoire."
+      "content": "<span class='colored'>Bookshelf Design System</span> représente ma première exploration approfondie de Figma dans le cadre d'un projet personnel proposé à la place du brief imposé par le cours.Par la suite, j’ai conçu un <span class='colored'>Pitch Deck</span>  et défendu mon travail devant un auditoire."
     },
     "bloc2": {
       "title": "Apprentissages",
-      "content": "Ce projet m'a permis de maîtriser les aspects techniques de Figma incluant la gestion des variables l’utilisations de tokens pour les couleurs et dimensions, la création de composants réutilisables avec leurs variantes, l'implémentation des modes sombre/clair via le système de tokens, et la réalisation de prototypes interactifs cliquables."
+      "content": "Ce projet m'a permis de maîtriser les aspects techniques de <span class='colored'>Figma</span> incluant la gestion des variables l’utilisations de tokens pour les couleurs et dimensions, la création de composants réutilisables avec leurs variantes, l'implémentation des modes sombre/clair via le système de tokens, et la réalisation de prototypes interactifs cliquables."
     },
     "bloc3": {
       "title": "Apprentissages",
-      "content": "J’ai également développé mes compétences UX/UI, en définissant l'identité visuelle du projet, structuré l'architecture de l'information de l'application, conçu des user flows complets pour optimiser l'expérience utilisateur, et créé un design system cohérent permettant d'obtenir une interface minimaliste et fonctionnelle."
+      "content": "J’ai également développé mes compétences <span class='colored'>UX/UI</span>, en définissant l'identité visuelle du projet, structuré l'architecture de l'information de l'application, conçu des user flows complets pour optimiser l'expérience utilisateur, et créé un <span class='colored'>design system</span> cohérent permettant d'obtenir une interface minimaliste et fonctionnelle."
     }
   },
   "images": {

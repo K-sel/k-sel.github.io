@@ -1,5 +1,5 @@
 <script setup>
-import { computed, inject } from "vue";
+import { inject } from "vue";
 import { useRoute } from "vue-router";
 import aboutData from "@/contents/about.json";
 
@@ -7,18 +7,22 @@ const props = defineProps({
   text: {
     type: String,
     required: false,
-    default: aboutData.hero
+    default: aboutData.hero,
   },
 
-  title : {
+  title: {
     type: String,
     required: false,
     default: "A propos de moi",
   },
+
+  color: {
+    type: String,
+    required: false,
+  },
 });
 
 const theme = inject("theme");
-const color = computed(() => (theme.value == "dark" ? "white" : "black"));
 
 console.log(props.text);
 
@@ -31,43 +35,41 @@ const route = useRoute().path;
       <p class="uppercase text-xs">{{ props.title }}</p>
     </div>
     <div class="flex py-12 md:p-12 lg:p-24">
-      <p class="text-2xl md:text-3xl lg:text-4xl">{{ props.text }}</p>
+      <p class="text-2xl md:text-3xl lg:text-4xl" :style="{ '--custom-color': props.color }" v-html="props.text"></p>
     </div>
 
-    <div class="flex justify-end">
+    <div v-if="route == '/'" class="flex justify-end">
       <router-link
-        v-if="route == '/'"
         to="./about"
         class="flex flex-row gap-1 w-fit border-b-2 border-current pb-0.5"
       >
         <p>En savoir plus à propos de moi</p>
-        <span
-          ><svg
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7 17.4351L17 7.43506"
-              :stroke="color"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M17 17.4351V7.43506H7"
-              :stroke="color"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <span>
+          <img
+            :src="
+              theme == 'dark' ? '/svg/arrow-white.svg' : '/svg/arrow-black.svg'
+            "
+            alt=""
+          />
         </span>
       </router-link>
+    </div>
+    <div v-else class="flex justify-start">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="8" cy="8.79785" r="8" :fill="props.color" />
+      </svg>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style>
+.colored {
+  color: var(--custom-color);
+}
+</style>

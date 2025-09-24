@@ -1,6 +1,7 @@
 {
   "meta": {
     "isProject": true,
+    "color": "#6A69C3",
     "title": "Lightshelf",
     "category": "Développement fullstack",
     "date": "Juin 2025",
@@ -10,15 +11,15 @@
   "texts": {
     "bloc1": {
       "title": "Le projet",
-      "content": "J'ai développé en autonomie une application web complète de gestion de collection de livres avec [Vue.js, Laravel, et SQLite] incluant API REST, self-made authentification, scraper de couvertures, seeders de base de donnée et interface utilisateur, pour maîtriser concrètement les interactions frontend/backend."
+      "content": "J'ai développé en autonomie une application web complète de gestion de collection de livres avec <span class='colored'>[Vue.js, Laravel, et SQLite]</span> incluant API REST, self-made authentification, scraper de couvertures, seeders de base de donnée et interface utilisateur, pour maîtriser concrètement les interactions frontend/backend."
     },
     "bloc2": {
       "title": "Fonctionnalités",
-      "content": "Lightshelf permet de gérer sa collection de livres en ajoutant/supprimant des ouvrages, suivre leur état de lecture (à lire, en cours, terminé), associer des informations détaillées (titre, auteur, ISBN, résumé personnel), intégrer des couvertures via URL et personnaliser son profil, dans une interface sobre et responsive avec thème sombre/clair."
+      "content": "<span class='colored'>Lightshelf</span> permet de gérer sa collection de livres en ajoutant/supprimant des ouvrages, suivre leur état de lecture (à lire, en cours, terminé), associer des informations détaillées (titre, auteur, ISBN, résumé personnel), intégrer des couvertures via URL et personnaliser son profil, dans une interface sobre et responsive avec thème sombre/clair."
     },
     "bloc3": {
       "title": "Plus d’informations",
-      "content": "Pour en savoir plus sur les détails d’implémentation, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le Repository Github[https://github.com/k-sel/lightshelf]."
+      "content": "Pour en savoir plus sur les détails d’implémentation, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le <a href='https://github.com/k-sel/lightshelf' target='_blank' class='underline'>Repository Github</a>."
     }
   },
   "images": {

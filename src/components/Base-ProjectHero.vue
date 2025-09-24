@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const night = inject("night");
+const theme = inject("theme");
 
 defineProps({
   meta: Object,
@@ -22,8 +22,8 @@ onMounted(() => {
     <div class="flex flex-row h-fit w-full">
       <img
         class="back"
-        @click="router.back()"
-        :src="night ? '/svg/back-white.svg' : '/svg/back-black.svg'"
+        @click="router.back() ? router.back() :  '/'"
+        :src="theme == 'dark' ? '/svg/back-white.svg' : '/svg/back-black.svg'"
         alt="Bouton de retour"
       />
     </div>

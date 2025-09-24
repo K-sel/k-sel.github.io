@@ -15,7 +15,7 @@
 }
 
 .dark {
-  --background-default: #0c0c0c;
+  --background-default: #0e0e0e;
   --box-bg-default: #000000;
   --text-default: #f2f2f2;
 
@@ -28,7 +28,7 @@
   }
 
   .link {
-    @apply underline md:text-lg text-base text-[var(--text-default)];
+    @apply  md:text-lg text-base text-[var(--text-default)];
   }
 
   .meta {

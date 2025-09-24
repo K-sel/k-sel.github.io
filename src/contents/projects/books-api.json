@@ -1,6 +1,7 @@
 {
   "meta": {
     "isProject": true,
+    "color": "#1856BA",
     "title": "Books API",
     "category": "API / Backend",
     "date": "Mars 2025",
@@ -10,19 +11,19 @@
   "texts": {
     "bloc1": {
       "title": "Le projet",
-      "content": "Books API est mon tout premier projet d'API REST développée avec [Node.js, TypeScript, Express.js, MySQL] entièrement en autodidacte pour me former aux technologies backend modernes."
+      "content": "Books API est mon tout premier projet d'API REST développée avec <span class='colored'>[Node.js, TypeScript, Express.js, MySQL]</span> entièrement en autodidacte pour me former aux technologies backend modernes."
     },
     "bloc2": {
       "title": "Fonctionnalités",
-      "content": "Books API offre la possibilité de gérer une bibliothèque personnelle offrant toutes les fonctionnalités CRUD nécessaires pour manipuler une collection de livres."
+      "content": "<span class='colored'>Books API</span> offre la possibilité de gérer une bibliothèque personnelle offrant toutes les fonctionnalités CRUD nécessaires pour manipuler une collection de livres."
     },
     "bloc3": {
       "title": "Expérience",
-      "content": "Books API est devenu la base conceptuelle de mes projets suivants, servant d'inspiration pour le design system de Bookshelf puis pour le développement de Lightshelf, créant ainsi un écosystème cohérent autour de cette idée initiale."
+      "content": "Books API est devenu <span class='colored'>la base conceptuelle de mes projets suivants</span>, servant d'inspiration pour le design system de Bookshelf puis pour le développement de Lightshelf, créant ainsi un écosystème cohérent autour de cette idée initiale."
     },
     "bloc4": {
       "title": "Plus d’informations",
-      "content": "Pour en savoir plus sur les détails d’implémentation, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le Repository Github."
+      "content": "Pour en savoir plus sur les <span class='colored'>détails d’implémentation</span>, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le <a href='' target='_blank' class='underline'>Repository Github</a>."
     }
   },
   "images": {

@@ -6,6 +6,8 @@ import Lightshelf from "../pages/projects/Lightshelf.vue";
 import Bookshelf from "../pages/projects/Bookshelf.vue";
 import TheAbout from "../pages/TheAbout.vue";
 
+
+
 const routes = [
   { path: "/", component: TheHome },
   { path: "/about", component: TheAbout },
@@ -18,4 +20,7 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior() {
+    return { top: 0 };
+  }
 });

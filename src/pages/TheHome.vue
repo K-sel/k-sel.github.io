@@ -14,17 +14,17 @@ const clock = inject("clock");
 slugs.forEach((slug) => {
   console.log(slug);
 });
-
 </script>
 
 <template>
-  <main class="m-3 md:m-6 lg:m-24 max-w-dvw flex flex-col gap-3">
+  <main class="m-3 md:m-6 lg:m-24 max-w-dvw flex flex-col gap-2">
     <Hero :clock="clock" :night="night" />
-    <section class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+    <section class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
       <ProjectPreview
         v-for="(slug, index) in slugs"
         :key="index"
         :slug="slug"
+        :class="index % 3 === 0 ? 'md:col-span-2' : ''"
       />
     </section>
     <About />
