@@ -4,5 +4,11 @@
     "texts": {
         "skills": "Je maîtrise l’ensemble du cycle de développement d’une application — du design d’interfaces à l’implémentation back-end et front-end jusqu’au déploiement. Mon approche full stack me permet de concevoir des solutions robustes et innovantes, en transformant des besoins complexes en outils numériques performants.",
         "hobbies": "En parallèle de mon parcours académique, je pratique régulièrement la course à pied et la randonnée en montagne. Ces activités développent ma discipline, ma résilience et ma capacité à atteindre des objectifs ambitieux, des qualités que je transpose également dans mes projets académiques et professionnels."
+    },
+    "images": {
+        "image_1" : "/img/about/image_1.jpg",
+        "image_2" : "/img/about/image_2.jpg",
+        "image_3" : "/img/about/image_3.jpg",
+        "image_4" : "/img/about/image_4.jpg"
     }
 }

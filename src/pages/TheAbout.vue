@@ -23,7 +23,7 @@ const mainRef = ref(null);
 function slideInFromTop() {
   if (!mainRef.value) return;
 
-  gsap.set(mainRef.value, { y: "-100%" });
+  gsap.set(mainRef.value, { y: "100%" });
 
   gsap.to(mainRef.value, {
     y: "0%",
@@ -47,10 +47,35 @@ watch(() => route.fullPath, () => slideInFromTop());
       :text="about.texts.skills"
     ></TextContainer>
 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <img
+        class="w-full col-span-2 h-full object-contain rounded-2xl"
+        :src="about.images.image_1"
+        alt=""
+      />
+      <img
+        class="w-full col-span-1 h-full object-contain rounded-2xl"
+        :src="about.images.image_2"
+        alt=""  
+      />
+    </div>
+
     <TextContainer
       :text="about.texts.hobbies"
     ></TextContainer>
-    
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+      <img
+        class="w-full h-full object-contain rounded-2xl"
+        :src="about.images.image_3"
+        alt=""
+      />
+      <img
+        class="w-full h-full object-contain rounded-2xl"
+        :src="about.images.image_4"
+        alt=""  
+      />
+    </div>
     <TheFooter></TheFooter>
   </main>
 </template>
