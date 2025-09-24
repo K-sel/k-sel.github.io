@@ -42,7 +42,7 @@ const route = useRoute().path;
       >
         <p>En savoir plus à propos de moi</p>
         <span>
-          <img
+          <img loading="lazy"
             :src="
               theme == 'dark' ? '/svg/arrow-white.svg' : '/svg/arrow-black.svg'
             "

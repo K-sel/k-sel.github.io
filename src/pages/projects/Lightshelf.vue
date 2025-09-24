@@ -22,48 +22,57 @@ const projectColor = project.value.meta.color;
       :color="projectColor"
     />
 
-    <div class="grid grid-row-1 md:grid-row-2 gap-3">
-      <div>
-        <img
-          class="w-full h-full object-contain rounded-2xl"
-          :src="project.images.image1"
-          alt=""
-        />
-      </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <img
-          class="w-full h-full object-contain rounded-2xl"
-          :src="project.images.image2"
-          alt=""
-        />
-        <img
-          class="w-full h-full object-contain rounded-2xl"
-          :src="project.images.image3"
-          alt=""
-        />
-      </div>
+      <img
+        loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image2"
+        alt=""
+      />
+      <img
+        loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image3"
+        alt=""
+      />
     </div>
 
-      <TextContainer
+    <TextContainer
       :text="project.texts.bloc2.content"
       :title="project.texts.bloc2.title"
       :color="projectColor"
     />
 
-    
+    <div>
+      <img
+        loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image1"
+        alt=""
+      />
+    </div>
+
+    <TextContainer
+      :text="project.texts.bloc4.content"
+      :title="project.texts.bloc4.title"
+      :color="projectColor"
+    />
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
       <img
+        loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="project.images.image4"
         alt=""
       />
       <img
+        loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="project.images.image5"
         alt=""
       />
     </div>
-  
+
     <TextContainer
       :text="project.texts.bloc3.content"
       :title="project.texts.bloc3.title"

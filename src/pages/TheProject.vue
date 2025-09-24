@@ -19,7 +19,7 @@ onMounted(() => {
   if (!mainRef.value) return;
 
   // position initiale : complètement en haut hors de l'écran
-  gsap.set(mainRef.value, { y: "100%" });
+  gsap.set(mainRef.value, { y: "50%" });
 
   // glisse jusqu'à sa position normale
   gsap.to(mainRef.value, {

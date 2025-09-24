@@ -12,7 +12,6 @@ const isAbout = route.split("/")[1] === "about" ? true : false;
 
 console.log(isAbout);
 
-const night = inject("night");
 const clock = inject("clock");
 const aboutData = computed(() => about);
 
@@ -23,7 +22,7 @@ const mainRef = ref(null);
 function slideInFromTop() {
   if (!mainRef.value) return;
 
-  gsap.set(mainRef.value, { y: "100%" });
+  gsap.set(mainRef.value, { y: "40%" });
 
   gsap.to(mainRef.value, {
     y: "0%",
@@ -48,12 +47,12 @@ watch(() => route.fullPath, () => slideInFromTop());
     ></TextContainer>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-      <img
+      <img loading="lazy"
         class="w-full col-span-2 h-full object-contain rounded-2xl"
         :src="about.images.image_1"
         alt=""
       />
-      <img
+      <img loading="lazy"
         class="w-full col-span-1 h-full object-contain rounded-2xl"
         :src="about.images.image_2"
         alt=""  
@@ -65,12 +64,12 @@ watch(() => route.fullPath, () => slideInFromTop());
     ></TextContainer>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-      <img
+      <img loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="about.images.image_3"
         alt=""
       />
-      <img
+      <img loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="about.images.image_4"
         alt=""  

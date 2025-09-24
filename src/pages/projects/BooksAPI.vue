@@ -22,7 +22,7 @@ const projectColor = project.value.meta.color;
       :title="project.texts.bloc1.title"
       :color="projectColor"
     />
-    <img
+    <img loading="lazy"
       class="w-full h-full object-contain rounded-2xl"
       :src="project.images.image1"
       alt=""
@@ -32,7 +32,7 @@ const projectColor = project.value.meta.color;
       :title="project.texts.bloc2.title"
       :color="projectColor"
     />
-    <img
+    <img loading="lazy"
       class="w-full h-full object-contain rounded-2xl"
       :src="project.images.image2"
       alt=""
@@ -42,7 +42,7 @@ const projectColor = project.value.meta.color;
       :title="project.texts.bloc3.title"
       :color="projectColor"
     />
-    <img
+    <img loading="lazy"
       class="w-full h-full object-contain rounded-2xl"
       :src="project.images.image3"
       alt=""

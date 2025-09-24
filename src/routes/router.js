@@ -11,11 +11,7 @@ import TheProject from "../pages/TheProject.vue";
 const routes = [
   { path: "/", component: TheHome },
   { path: "/about", component: TheAbout },
-  // { path: "/project/books-api", component: BooksAPI },
-  // { path: "/project/lightshelf", component: Lightshelf },
-  // { path: "/project/bookshelf", component: Bookshelf },
-  // { path: "/project/cs50", component: CS50 },
-  { path: "/project/:name", component: TheProject },
+  { path: "/projects/:name", component: TheProject },
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
 

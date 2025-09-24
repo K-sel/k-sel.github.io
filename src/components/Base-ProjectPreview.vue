@@ -22,7 +22,7 @@ const contrastClass = computed(() =>
 );
 </script>
 <template>
-  <RouterLink :to="`project/${project.slug}`">
+  <RouterLink :to="`projects/${project.slug}`">
     <div
       class="flex flex-col rounded-2xl p-4 transition-colors duration-300 justify-between min-h-[500px]"
       :class="{
@@ -51,7 +51,7 @@ const contrastClass = computed(() =>
           {{ project.meta.cover_text }}
         </h2>
 
-        <img
+        <img loading="lazy"
           v-else
           class="w-full h-[400px] object-contain rounded-2xl"
           :src="project.meta.cover"

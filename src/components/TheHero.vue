@@ -1,5 +1,7 @@
 <script setup>
 import { inject, ref, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
+
 import IconScrew from "./IconScrew.vue";
 import gsap from "gsap";
 
@@ -8,6 +10,43 @@ const theme = inject("theme");
 const toggleTheme = inject("toggleTheme");
 
 const heroRef = ref(null);
+const router = useRouter();
+const route = useRoute();
+
+const linkRef = ref(null); // 👈 ref pour le lien "Projets"
+function onProjectsClick(event) {
+  if (route.path !== "/") {
+    router.push("/");
+    return;
+  }
+
+  pulse();
+}
+
+function onAboutClick(event) {
+  if (route.path !== "/about") {
+    router.push("/about");
+    return;
+  }
+
+  pulse();
+}
+
+const pulse = () => {
+  if (linkRef.value) {
+    gsap.fromTo(
+      linkRef.value,
+      { scale: 1 },
+      {
+        scale: 1.06,
+        duration: 0.12,
+        ease: "power1.out",
+        yoyo: true,
+        repeat: 1,
+      }
+    );
+  }
+};
 
 onMounted(() => {
   if (!heroRef.value) return;
@@ -16,7 +55,7 @@ onMounted(() => {
   gsap.set(heroRef.value, {
     y: 80,
     opacity: 0,
-    rotationX: 12, // démarrer incliné (donne profondeur)
+    rotationX: 6, // démarrer incliné (donne profondeur)
     transformOrigin: "center center",
     willChange: "transform, opacity",
   });
@@ -46,103 +85,122 @@ defineProps({
 
   phrase: {
     type: String,
-    default: "Je transforme mes idées en réalités, un projet à la fois.",
+    default:
+      "Passioné d'informatique et de développement, je transforme mes idées en réalités, un projet à la fois.",
     required: false,
   },
 });
 </script>
 
 <template>
-  <div ref="heroRef" class="box h-[70dvh] flex flex-col justify-between">
-    <div class="flex flex-col gap-12 md:flex-row md:justify-between">
-      <h1 class="text-2xl md:text-3xl lg:text-4xl">
-        Jonathan Pinard <span v-if="isAbout">, 23 ans</span>
-        <span v-else>
-          <span v-if="night">😴</span>
-          <span v-else>💻</span>
-        </span>
-      </h1>
+  <div ref="linkRef">
+    <div ref="heroRef" class="box h-[70dvh] flex flex-col justify-between">
+      <div class="flex flex-col gap-12 md:flex-row md:justify-between">
+        <div class="flex flex-row h-fit items-center justify-between">
+          <h1 class="text-2xl md:text-3xl lg:text-4xl">
+            Jonathan Pinard <span v-if="isAbout">, 23 ans</span>
+            <span v-else>
+              <span v-if="night">😴</span>
+              <span v-else>💻</span>
+            </span>
+          </h1>
 
-      <div class="flex flex-col gap-2">
-        <router-link to="/">
-          <IconScrew :text="'Projets'"></IconScrew>
-        </router-link>
-
-        <router-link to="/about">
-          <IconScrew :text="'A propos'"></IconScrew>
-        </router-link>
-
-        <a
-          class="link flex flex-row gap-1 items-center"
-          href="mailto:clarinette-86-elements@icloud.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconScrew :text="'Contact'"></IconScrew>
-        </a>
-      </div>
-
-      <div class="hidden md:flex flex-col gap-2">
-        <a class="link underline" href="https://github.com/K-sel">Github</a>
-        <a
-          class="link underline"
-          href="https://www.linkedin.com/in/jonathanpnrd/"
-          >LinkedIn</a
-        >
-      </div>
-    </div>
-
-    <div
-      class="flex flex-col lg:flex-row gap-6 lg:justify-between lg:items-end"
-    >
-      <div v-if="isAbout" class="flex-1 min-w-0 max-w-full md:max-w-[50rem]">
-        <h2 class="text-2xl">{{ phrase }}</h2>
-      </div>
-
-      <div v-else class="flex-1 min-w-0 max-w-full md:max-w-[38rem]">
-        <h2 class="text-2xl md:text-3xl lg:text-4xl">{{ phrase }}</h2>
-      </div>
-
-      <div class="flex flex-row justify-between items-center">
-        <div class="flex-shrink-0 flex items-center gap-2 align-middle">
-          <div class="flex items-center gap-2 whitespace-nowrap">
-            <img
-              :src="night ? '/svg/dot-red.svg' : '/svg/dot-green.svg'"
-              alt="dot"
-              class="dot w-4 h-4 flex-shrink-0"
-            />
-            <p class="hidden md:block text-lg whitespace-nowrap">
-              {{ night ? "Closed for the night" : "Open to work" }}
-            </p>
-            <div class="whitespace-nowrap">
-              <p class="text-lg whitespace-nowrap">UTC+1 ZH {{ clock }}</p>
-            </div>
+          <div class="flex md:hidden">
+            <button
+              @click="toggleTheme"
+              class=" relative w-12 h-6 bg-[var(--background-default)] rounded-full transition-colors duration-300 ease-in-out"
+              aria-label="Toggle theme"
+            >
+              <span
+                class="absolute top-0.5 left-0.5 h-5 w-5 rounded-full transition-all duration-300 ease-in-out"
+                :class="
+                  (theme?.value ?? theme) === 'dark'
+                    ? 'translate-x-6  bg-white'
+                    : 'translate-x-0 bg-black'
+                "
+              />
+            </button>
           </div>
-
-          <button
-            @click="toggleTheme"
-            class="flex items-center justify-center rounded-md focus:outline-none"
-            aria-label="Toggle theme"
-          >
-            <img
-              :src="
-                (theme?.value ?? theme) === 'dark'
-                  ? '/svg/sun.svg'
-                  : '/svg/moon.svg'
-              "
-              alt="theme-toggle"
-              class="w-5 h-5 flex-shrink-0"
-            />
-          </button>
         </div>
 
-        <div class="flex md:hidden flex-row gap-3">
+        <div class="flex flex-col gap-2">
+          <router-link to="/" @click.prevent="onProjectsClick">
+            <IconScrew :text="'Projets'"></IconScrew>
+          </router-link>
+
+          <router-link to="/about" @click.prevent="onAboutClick">
+            <IconScrew :text="'A propos'"></IconScrew>
+          </router-link>
+
+          <a
+            class="link flex flex-row gap-1 items-center"
+            href="mailto:clarinette-86-elements@icloud.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconScrew :text="'Me contacter'"></IconScrew>
+          </a>
+        </div>
+
+        <div class="hidden md:flex flex-col gap-2">
           <a class="link underline" href="https://github.com/K-sel">Github</a>
           <a
             class="link underline"
             href="https://www.linkedin.com/in/jonathanpnrd/"
             >LinkedIn</a
           >
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col lg:flex-row gap-6 lg:justify-between lg:items-end"
+      >
+        <div class="flex-1 min-w-0 max-w-full md:max-w-[50%]">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl">{{ phrase }}</h2>
+        </div>
+
+        <div class="flex flex-row justify-between items-center">
+          <div class="flex-shrink-0 flex items-center gap-2 align-middle">
+            <div class="flex items-center gap-2 whitespace-nowrap">
+              <img loading="lazy"
+                :src="night ? '/svg/dot-red.svg' : '/svg/dot-green.svg'"
+                alt="dot"
+                class="dot w-4 h-4 flex-shrink-0"
+              />
+              <p class="hidden md:block text-lg whitespace-nowrap">
+                {{ night ? "Closed for the night" : "Open to work" }}
+              </p>
+              <div class="whitespace-nowrap" style="min-width: calc(10rem + 6px);">
+                <p class="text-lg whitespace-nowrap">UTC+1 ZH {{ clock }}</p>
+              </div>
+            </div>
+
+            <div class="hidden md:flex">
+            <button
+              @click="toggleTheme"
+              class=" relative w-12 h-6 bg-[var(--background-default)] rounded-full transition-colors duration-300 ease-in-out"
+              aria-label="Toggle theme"
+            >
+              <span
+                class="absolute top-0.5 left-0.5 h-5 w-5 rounded-full transition-all duration-300 ease-in-out"
+                :class="
+                  (theme?.value ?? theme) === 'dark'
+                    ? 'translate-x-6  bg-white'
+                    : 'translate-x-0 bg-black'
+                "
+              />
+            </button>
+          </div>
+          </div>
+
+          <div class="flex md:hidden flex-row gap-3">
+            <a class="link underline" href="https://github.com/K-sel">Github</a>
+            <a
+              class="link underline"
+              href="https://www.linkedin.com/in/jonathanpnrd/"
+              >LinkedIn</a
+            >
+          </div>
         </div>
       </div>
     </div>

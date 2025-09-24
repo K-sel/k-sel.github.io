@@ -1,29 +1,54 @@
-<script setup></script>
+<script setup>
+import { inject } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+function handleBack() {
+  if (window.history.state?.back) {
+    router.back();
+  } else {
+    router.push("/");
+  }
+}
+
+function goUp() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+const theme = inject("theme");
+</script>
 
 <template>
   <div
     class="box flex flex-col justify-between h-60 md:h-72 lg:h-80 p-6 md:p-7 lg:p-8"
   >
-    <div class="flex h-fit">
+    <div class="flex h-fit flex-row justify-between">
       <p class="text-lg md:text-xl lg:text-2xl">
-        [Vision, Concecption, Implementation]
+        [Vision, Conception, Implementation]
       </p>
+
+       <img loading="lazy" 
+          class="w-10 h-10 cursor-pointer"
+          @click="(router.currentRoute.value.path !== '/' && router.currentRoute.value.path !== '/about') ? handleBack() : goUp()"
+          :src="theme == 'dark' ? '/svg/back-white.svg' : '/svg/back-black.svg'"
+          alt="Bouton de retour"
+        />
     </div>
 
-    <div class="flex flex-col h-fit">
-      <div class="py-3 flex flex-row gap-3">
-        <a class="link" href="https://github.com/K-sel">Github</a>
-        <a class="link" href="https://www.linkedin.com/in/jonathanpnrd/"
-          >LinkedIn</a
-        >
-        <a
-          class="link"
-          href="mailto:clarinette-86-elements@icloud.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Contact
-        </a>
+    <div class="flex flex-col justify-between">
+        <div class="py-3 flex flex-row h-fit gap-3">
+          <a class="link" href="https://github.com/K-sel">Github</a>
+          <a class="link" href="https://www.linkedin.com/in/jonathanpnrd/"
+            >LinkedIn</a
+          >
+          <a
+            class="link"
+            href="mailto:clarinette-86-elements@icloud.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contact
+          </a>
       </div>
 
       <div

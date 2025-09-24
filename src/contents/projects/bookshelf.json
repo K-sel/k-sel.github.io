@@ -11,19 +11,12 @@
   },
   "links": {
     "title": "Liens & Ressources",
-    "link-1": {
-      "title": "Accéder au fichier Figma",
-      "url": "https://google.com"
-    },
-    "link-2": {
-      "title": "Découvir le Pitch Deck",
-      "url": "https://youtube.com"
-    }
+    "content": "<a class='underline' target='_blank' rel='noopener noreferrer' href='https://www.figma.com/design/MgDQj1nKCszKoNE68zPmAP/Bookshelf?node-id=0-1&t=3aBoMpop11xHy8SK-1'> Accéder au fichier Figma</a> <br><br> <a class='underline' target='_blank' rel='noopener noreferrer' href='https://www.figma.com/slides/0GQNAeB4ii7nOSG3vrSMeT/Bookshelf---Presentation?node-id=2-442&t=lEQOPBCA49qMmnPC-1'> Découvir le Pitch Deck</a>"
   },
   "texts": {
     "bloc1": {
       "title": "Le projet",
-      "content": "<span class='colored'>Bookshelf Design System</span> représente ma première exploration approfondie de Figma dans le cadre d'un projet personnel proposé à la place du brief imposé par le cours.Par la suite, j’ai conçu un <span class='colored'>Pitch Deck</span>  et défendu mon travail devant un auditoire."
+      "content": "<span class='colored'>Bookshelf Design System</span> représente ma première exploration approfondie de Figma dans le cadre d'un projet personnel proposé à la place du brief imposé par le cours. Par la suite, j’ai du crée un <span class='colored'>Pitch Deck</span>  et défendre mon travail devant un auditoire."
     },
     "bloc2": {
       "title": "Apprentissages",

@@ -21,7 +21,7 @@ const route = useRoute();
 function slideInFromTop() {
   if (!mainRef.value) return;
 
-  gsap.set(mainRef.value, { y: "-100%" });
+  gsap.set(mainRef.value, { y: "100%" });
 
   gsap.to(mainRef.value, {
     y: "0%",

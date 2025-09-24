@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, inject, ref } from "vue";
-import gsap from "gsap";
 import { useRouter } from "vue-router";
+import gsap from "gsap";
 
 const theme = inject("theme");
 const router = useRouter();
@@ -18,17 +18,13 @@ const heroRef = ref(null);
 
 onMounted(() => {
   if (!heroRef.value) return;
-
-  // État initial visuel (permet un rendu propre si CSS/SSR change l'opacity)
   gsap.set(heroRef.value, {
     y: 80,
     opacity: 0,
-    rotationX: 12, // démarrer incliné (donne profondeur)
+    rotationX: 6, // démarrer incliné (donne profondeur)
     transformOrigin: "center center",
     willChange: "transform, opacity",
   });
-
-  // Animation d'entrée : slide + rotation -> pose 3D naturelle
   gsap.to(heroRef.value, {
     y: 0,
     opacity: 1,
@@ -49,8 +45,8 @@ defineProps({
 <template>
   <section ref="heroRef" class="box flex flex-col h-[80dvh] w-full justify-between">
     <div class="flex flex-row h-fit w-full">
-      <img
-        class="back"
+      <img loading="lazy"
+        class="back cursor-pointer"
         @click="handleBack"
         :src="theme == 'dark' ? '/svg/back-white.svg' : '/svg/back-black.svg'"
         alt="Bouton de retour"

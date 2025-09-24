@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background-default: #f2f2f2;
+  --background-default: #f0f0f0;
   --box-bg-default: #ffffff;
   --text-default: #000000;
   --meta-text-color: #b4b4b4;
@@ -17,7 +17,7 @@
 .dark {
   --background-default: #252422;
   --box-bg-default: #000000;
-  --text-default: #f2f2f2;
+  --text-default: #ffffff;
 
   
 }

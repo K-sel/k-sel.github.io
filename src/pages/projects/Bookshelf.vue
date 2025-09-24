@@ -11,7 +11,6 @@ const route = useRoute().path;
 const night = inject("night");
 const project = computed(() => getProjectBySlug(route.split("/")[2]));
 const projectColor = project.value.meta.color;
-
 </script>
 
 <template>
@@ -24,17 +23,23 @@ const projectColor = project.value.meta.color;
     />
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      <img
+      <img loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="project.images.image1"
         alt=""
       />
-      <img
+      <img loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="project.images.image2"
         alt=""
       />
     </div>
+
+    <TextContainer
+      :text="project.links.content"
+      :title="project.links.title"
+      :color="projectColor"
+    />
     <TextContainer
       :text="project.texts.bloc2.content"
       :title="project.texts.bloc2.title"
@@ -42,12 +47,12 @@ const projectColor = project.value.meta.color;
     />
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      <img
+      <img loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="project.images.image3"
         alt=""
       />
-      <img
+      <img loading="lazy"
         class="w-full h-full object-contain rounded-2xl"
         :src="project.images.image4"
         alt=""
@@ -58,6 +63,7 @@ const projectColor = project.value.meta.color;
       :title="project.texts.bloc3.title"
       :color="projectColor"
     />
+
     <TheFooter></TheFooter>
   </main>
 </template>

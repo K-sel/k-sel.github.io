@@ -12,7 +12,7 @@
   "texts": {
     "bloc1": {
       "title": "Le projet",
-      "content": "Books API est mon tout premier projet d'API REST développée avec <span class='colored'>[Node.js, TypeScript, Express.js, MySQL]</span> entièrement en autodidacte pour me former aux technologies backend modernes."
+      "content": "Books API (précédemment nommé bookshelf-api) est mon tout premier projet d'API REST développée avec <span class='colored'>[Node.js, TypeScript, Express.js, MySQL]</span> entièrement en autodidacte pour me former aux technologies backend modernes."
     },
     "bloc2": {
       "title": "Fonctionnalités",
@@ -24,7 +24,7 @@
     },
     "bloc4": {
       "title": "Plus d’informations",
-      "content": "Pour en savoir plus sur les <span class='colored'>détails d’implémentation</span>, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le <a href='' target='_blank' class='underline'>Repository Github</a>."
+      "content": "Pour en savoir plus sur les <span class='colored'>détails d’implémentation</span>, les choix techniques ainsi que le code, veuillez consulter le README du projet dans le <a href='https://github.com/k-sel/bookshelf-api' target='_blank' class='underline'>Repository Github</a>."
     }
   },
   "images": {
