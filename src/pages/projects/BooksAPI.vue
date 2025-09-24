@@ -22,31 +22,56 @@ const projectColor = project.value.meta.color;
       :title="project.texts.bloc1.title"
       :color="projectColor"
     />
-    <img loading="lazy"
-      class="w-full h-full object-contain rounded-2xl"
-      :src="project.images.image1"
-      alt=""
-    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <img loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image2"
+        alt=""
+      />
+      <img loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image3"
+        alt=""
+      />
+    </div>
+
     <TextContainer
       :text="project.texts.bloc2.content"
       :title="project.texts.bloc2.title"
       :color="projectColor"
     />
-    <img loading="lazy"
-      class="w-full h-full object-contain rounded-2xl"
-      :src="project.images.image2"
-      alt=""
-    />
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <img loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image4"
+        alt=""
+      />
+      <img loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image5"
+        alt=""
+      />
+    </div>
+
     <TextContainer
       :text="project.texts.bloc3.content"
       :title="project.texts.bloc3.title"
       :color="projectColor"
     />
-    <img loading="lazy"
-      class="w-full h-full object-contain rounded-2xl"
-      :src="project.images.image3"
-      alt=""
-    />
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <img loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image6"
+        alt=""
+      />
+      <img loading="lazy"
+        class="w-full h-full object-contain rounded-2xl"
+        :src="project.images.image7"
+        alt=""
+      />
+    </div>
+
     <TextContainer
       :text="project.texts.bloc4.content"
       :title="project.texts.bloc4.title"
