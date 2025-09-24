@@ -1,6 +1,8 @@
 {
     "hero": "Ma passion réside dans la diversité des projets digitaux : identifier les problématiques, concevoir les solutions, orchestrer leur développement. Cette approche holistique, couplée à ma curiosité naturelle, me permet d'appréhender chaque défi sous tous ses angles.",
     "education": "Étudiant en de troisième année BSc d’ingénierie des médias — je vise à terme de rejoindre HEC Lausanne pour obtenir un Master en systèmes d’information.",
-    "skills": "Je maîtrise l’ensemble du cycle de développement d’une application — du design d’interfaces à l’implémentation back-end et front-end jusqu’au déploiement. Mon approche full stack me permet de concevoir des solutions robustes et innovantes, en transformant des besoins complexes en outils numériques performants.",
-    "hobbies": "En parallèle de mon parcours académique, je pratique régulièrement la course à pied et la randonnée en montagne. Ces activités développent ma discipline, ma résilience et ma capacité à atteindre des objectifs ambitieux, des qualités que je transpose également dans mes projets académiques et professionnels."
+    "texts": {
+        "skills": "Je maîtrise l’ensemble du cycle de développement d’une application — du design d’interfaces à l’implémentation back-end et front-end jusqu’au déploiement. Mon approche full stack me permet de concevoir des solutions robustes et innovantes, en transformant des besoins complexes en outils numériques performants.",
+        "hobbies": "En parallèle de mon parcours académique, je pratique régulièrement la course à pied et la randonnée en montagne. Ces activités développent ma discipline, ma résilience et ma capacité à atteindre des objectifs ambitieux, des qualités que je transpose également dans mes projets académiques et professionnels."
+    }
 }

@@ -8,12 +8,22 @@ const toggleTheme = inject("toggleTheme");
 
 console.log(theme.value);
 
-const phrase = "Je transforme mes idées en réalités, un projet à la fois.";
-
 defineProps({
   clock: {
     type: String,
     default: "00:00:00",
+  },
+
+  isAbout: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+
+  phrase: {
+    type: String,
+    default: "Je transforme mes idées en réalités, un projet à la fois.",
+    required: false,
   },
 });
 </script>
@@ -22,44 +32,41 @@ defineProps({
   <div class="box h-[70dvh] flex flex-col justify-between">
     <div class="flex flex-col gap-12 md:flex-row md:justify-between">
       <h1 class="text-2xl md:text-3xl lg:text-4xl">
-        Jonathan Pinard
-        <span v-if="night">😴</span>
-        <span v-else>💻</span>
+        Jonathan Pinard <span v-if="isAbout">, 23 ans</span>
+        <span v-else>
+          <span v-if="night">😴</span>
+          <span v-else>💻</span>
+        </span>
       </h1>
 
       <div class="flex flex-col gap-2">
         <a class="link flex flex-row gap-1 items-center" href="#">
-          <IconScrew class="h-[1.2em] w-auto" />
-          Projets
+          <IconScrew :text="'Projets'"></IconScrew>
         </a>
 
         <a class="link flex flex-row gap-1 items-center" href="#">
-          <IconScrew class="h-[1.2em] w-auto" />
-          A propos
+          <IconScrew :text="'A propos'"></IconScrew>
         </a>
 
-        <a
-          class="link flex flex-row gap-1 items-center"
-          href="mailto:clarinette-86-elements@icloud.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconScrew class="h-[1.2em] w-auto" />Contact
+        <a class="link flex flex-row gap-1 items-center" href="mailto:clarinette-86-elements@icloud.com" target="_blank" rel="noopener noreferrer">
+          <IconScrew :text="'Contact'"></IconScrew>
         </a>
       </div>
 
       <div class="hidden md:flex flex-col gap-2">
         <a class="link underline" href="https://github.com/K-sel">Github</a>
-        <a class="link underline" href="https://www.linkedin.com/in/jonathanpnrd/"
-          >LinkedIn</a
-        >
+        <a class="link underline" href="https://www.linkedin.com/in/jonathanpnrd/">LinkedIn</a>
       </div>
     </div>
 
     <div
       class="flex flex-col lg:flex-row gap-6 lg:justify-between lg:items-end"
     >
-      <div class="flex-1 min-w-0 max-w-full md:max-w-[38rem]">
+      <div v-if="isAbout" class="flex-1 min-w-0 max-w-full md:max-w-[50rem]">
+        <h2 class="text-2xl">{{ phrase }}</h2>
+      </div>
+
+      <div v-else class="flex-1 min-w-0 max-w-full md:max-w-[38rem]">
         <h2 class="text-2xl md:text-3xl lg:text-4xl">{{ phrase }}</h2>
       </div>
 
@@ -98,7 +105,9 @@ defineProps({
 
         <div class="flex md:hidden flex-row gap-3">
           <a class="link underline" href="https://github.com/K-sel">Github</a>
-          <a class="link underline" href="https://www.linkedin.com/in/jonathanpnrd/"
+          <a
+            class="link underline"
+            href="https://www.linkedin.com/in/jonathanpnrd/"
             >LinkedIn</a
           >
         </div>
