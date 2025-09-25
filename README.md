@@ -14,7 +14,7 @@ Ce portfolio reflète ma conviction que dans le domaine technique, il est crucia
 ## 📞 Contact
 
 - **Email** : jpinard@bluewin.ch
-- **LinkedIn** : [jonathan-pinard](https://www.linkedin.com/in/jonathanpnrd/)
+- **LinkedIn** : [jonathanpnrd](https://www.linkedin.com/in/jonathanpnrd/)
 
 ## 🌟 Fonctionnalités
 
