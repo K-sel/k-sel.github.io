@@ -15,7 +15,6 @@ Ce portfolio reflète ma conviction que dans le domaine technique, il est crucia
 
 - **Email** : jpinard@bluewin.ch
 - **LinkedIn** : [jonathan-pinard](https://www.linkedin.com/in/jonathanpnrd/)
-- **GitHub** : [k-sel](https://github.com/K-sel)
 
 ## 🌟 Fonctionnalités
 
