@@ -24,7 +24,7 @@
     },
     "bloc4": {
       "title": "Le contexte",
-      "content": "En fin de deuxième année, nous devions réaliser un projet fullstack selon un cahier des charges imposé. Fort de mon expérience sur mes <span class='colored'>projets personnels précédents</span>, j'ai pris l'initiative de proposer au corps enseignant une alternative ambitieuse : développer le <span class='colored'>MVP de mon autre projet personnel, </span> <a href='/projects/bookshelf' class='underline colored'>Bookshelf</a>, que j'avais préalablement designé sur Figma. Cette initiative a été validée et saluée par l'équipe pédagogique."
+      "content": "En fin de deuxième année, nous devions réaliser un projet fullstack selon un cahier des charges imposé. Fort de mon expérience sur mes <span class='colored'>projets personnels précédents</span>, j'ai pris l'initiative de proposer au corps enseignant une alternative ambitieuse : développer le <span class='colored'>MVP de mon autre projet personnel, Bookshelf</span>, que j'avais préalablement designé sur Figma. Cette initiative a été validée et saluée par l'équipe pédagogique."
     }
   },
   "images": {
